@@ -1,0 +1,90 @@
+@use "global" as *;
+// box1
+/* コンテナ要素 */
+.box1 {
+  position: relative;
+  width: calc(100% / 4); /* 任意の横幅を指定 */
+  //   background: rgba(255, 0, 0, 1);
+  margin: 0 auto;
+  margin-bottom: rem(50);
+}
+
+/* コンテナ要素の擬似要素(ここで比率を調整) */
+.box1::before {
+  content: "";
+  display: block;
+  padding-top: 75%; /* 比率を指定 */
+  background: rgba(255, 0, 255, 1);
+}
+
+/* 中の要素 */
+.box1__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1__content:hover {
+  background: rgba(0, 0, 255, 0);
+}
+
+// box2
+.box2 {
+  display: block;
+  width: calc(100% / 2);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: rem(50);
+}
+
+.box2::before {
+  content: "";
+  display: block;
+  padding-top: 66.6%;
+  background: rgba(255, 0, 0, 1);
+}
+
+.box2__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.box2__content img {
+  display: block;
+  transform: scale(1.1);
+}
+
+// box3
+.box3 {
+  display: block;
+  width: calc(100% / 3);
+  margin: 0 auto;
+}
+
+.box3__figure {
+  display: block;
+  padding-top: 60%;
+  position: relative;
+  overflow: hidden;
+}
+
+.box3__figure img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
